@@ -4,6 +4,6 @@ exports.validate = function(num){
     return num;
   }
   else{
-    return "Is Not Valid";
+    console.log("Is Not Valid");
   }
 }
