@@ -1,3 +1,4 @@
+
 exports.validate = function(num){
   var reg = /^\d+$/;
   if(reg.test(num)){
