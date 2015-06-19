@@ -1,10 +1,9 @@
-exports.number = function(num) {
-
-		  if (isNaN(num)){
-		    console.log("is not valid");
-		  }
-		  else {
-		    console.log("is valid");
-			  return num;
-		  }
+exports.validate = function(num){
+  var reg = /^\d+$/;
+  if(reg.test(num)){
+    return num;
+  }
+  else{
+    return "Is Not Valid";
+  }
 }
