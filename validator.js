@@ -55,9 +55,9 @@ module.exports = {
 
 	},
 
-	/*********************************************
-	* Validate Persian number and alphabet
-	**********************************************
+	/********************************************************
+	* Validate Persian number, alphabet, space and half-space
+	*********************************************************
 	* @since 24 Jun 2015
 	* @var input string
 	* @return boolean
@@ -65,6 +65,15 @@ module.exports = {
 	text: function( input ) {
 
 		this.regex = /^([\u0600-\u06FF|\s|\u200C])+$/;
+
+		return this._run( input );
+
+	},
+
+
+	mobile: function( input ) {
+
+		this.regex = /^(((98)|(\+98)|(0098)|0)(90|91|92|93){1}[0-9]{8})+$/;
 
 		return this._run( input );
 
