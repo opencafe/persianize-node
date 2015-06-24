@@ -26,7 +26,7 @@ module.exports = {
 	 * Validate persian alphabet
 	 **********************************************
 	 * @since 21 Jun 2015
-	 * @var integer string
+	 * @var input string
 	 * @return boolean
 	 */
 	alpha: function( input ) {
@@ -35,6 +35,36 @@ module.exports = {
 		 * Persian alphabet range
 		 */
 		this.regex = /^([\u0600-\u06EF]{1,})+$/;
+
+		return this._run( input );
+
+	},
+
+	/*********************************************
+	* Validate Persian number and alphabet
+	**********************************************
+	* @since 24 Jun 2015
+	* @var input string
+	* @return boolean
+	*/
+	alpha_num: function( input ) {
+
+		this.regex = /^([\u0600-\u06FF]{1,})+$/;
+
+		return this._run( input );
+
+	},
+
+	/*********************************************
+	* Validate Persian number and alphabet
+	**********************************************
+	* @since 24 Jun 2015
+	* @var input string
+	* @return boolean
+	*/
+	text: function( input ) {
+
+		this.regex = /^([\u0600-\u06FF|\s|\u200C])+$/;
 
 		return this._run( input );
 

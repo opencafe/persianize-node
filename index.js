@@ -6,5 +6,9 @@ console.log( "This Experation is persian number {1}: --------------- " +  persia
 console.log( "This Experation is persian number {۳}: --------------- " + persianize.validator().number('۳'));
 console.log( "This Experation is persian alpha {persian}: --------------- " +  persianize.validator().alpha('persian') );
 console.log( "This Experation is persian alpha {فارسی}: --------------- " + persianize.validator().alpha('فارسی'));
+console.log( "This Experation is persian alpha_num {persian}: --------------- " +  persianize.validator().alpha_num('persian') );
+console.log( "This Experation is persian alpha_num {۳فارسی}: --------------- " + persianize.validator().alpha_num('۳فارسی'));
+console.log( "This Experation is persian text {persian}: --------------- " +  persianize.validator().text('persian') );
+console.log( "This Experation is persian text {۳ فارسی}: --------------- " + persianize.validator().text('۳ فارسی'));
 
 // server.run();
