@@ -10,5 +10,6 @@ console.log( "This Experation is persian alpha_num {persian}: --------------- " 
 console.log( "This Experation is persian alpha_num {۳فارسی}: --------------- " + persianize.validator().alpha_num('۳فارسی'));
 console.log( "This Experation is persian text {persian}: --------------- " +  persianize.validator().text('persian') );
 console.log( "This Experation is persian text {۳ فارسی}: --------------- " + persianize.validator().text('۳ فارسی'));
+console.log("convert english number to persian number: ----------------- " + persianize.convert().number("321").get());
 
 // server.run();
