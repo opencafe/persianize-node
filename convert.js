@@ -1,18 +1,26 @@
+module.exports = {
 
-exports.number = function( num ) {
+	persian_number: [ "\u06F0", "\u06F1", "\u06F2", "\u06F3", "&\u06F4",
+	 								"\u06F5", "\u06F6", "\u06F7", "\u06F8", "\u06F9"],
 
-	var per_num = [ "\xDB\xB0", "\xDB\xB1", "\xDB\xB2", "\xDB\xB3", "\xDB\xB4", "\xDB\xB5", "\xDB\xB6", "\xDB\xB7", "\xDB\xB8", "\xDB\xB9" ];
+  result: '',
 
-  var persian_num = "";
+	number: function( input ){
 
-  //num = String(num);
+  	for (var i = 0; i < input.length; i++) {
 
-  for (var i = 0; i < num.length; i++) {
-
-    persian_num += (parseInt(per_num[parseInt(num.charAt(i))], 16)).toString();
+    	this.result += this.persian_number[parseInt(input.charAt(i))];
 
   }
 
-  return persian_num;
+  	return this;
+
+	},
+
+	get: function(){
+
+		return this.result;
+
+	}
 
 }
