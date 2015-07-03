@@ -14,4 +14,5 @@ console.log("Convert english number to persian number: --------------- " + persi
 console.log("Convert Arabic charachters to persian: --------------- " + persianize.convert().removeArabicChar("می روي‌").get());
 console.log("Replace half-space to persian verbs: -------------- " + persianize.convert().half_space("می روی‌").get());
 console.log("Replace half-space to persian verbs: -------------- " + persianize.convert().half_space("آمده ای").get());
+console.log("Convert All Arabic charachters to persian: --------------- " + persianize.convert().all("می روي‌").get());
 // server.run();

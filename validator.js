@@ -71,6 +71,13 @@ module.exports = {
 	},
 
 
+	/*********************************************************
+	 * Validate Iran mobile numbers
+	 *********************************************************
+	 * @since 24 Jun 2015
+	 * @var input string
+	 * @return boolean
+	 */
 	mobile: function( input ) {
 
 		this.regex = /^(((98)|(\+98)|(0098)|0)(90|91|92|93){1}[0-9]{8})+$/;
