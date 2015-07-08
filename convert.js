@@ -114,7 +114,7 @@ module.exports = {
 	/**********************************************************************
 	* Convert inputs to valid persian format with all options
 	***********************************************************************
-	* @since 02 July 2015
+	* @since 08 July 2015
 	* @var input string
 	* @return string
 	*/
