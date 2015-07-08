@@ -4,13 +4,15 @@ module.exports = {
 
 	result: '',
 
-	 /*********************************************************************
-	 * Convert english number to persian number
-	 **********************************************************************
-	 * @since 25 Jun 2015
-	 * @var input string
-	 * @return object
-	 */
+	temp: '',
+
+	/*********************************************************************
+	* Convert english number to persian number
+	**********************************************************************
+	* @since 25 Jun 2015
+	* @var input string
+	* @return object
+	*/
 	number: function( input ) {
 
 		if ( input == null ) {
@@ -21,9 +23,42 @@ module.exports = {
 
 		for (var i = 0; i < input.length; i++) {
 
-    	this.result += this.persian_number[ parseInt( input.charAt( i ) ) ];
+			this.result += this.persian_number[ parseInt( input.charAt( i ) ) ];
 
-  	}
+    }
+
+		return this;
+
+	},
+
+	/*********************************************************************
+	* Convert english number to persian number in persin text
+	**********************************************************************
+	* @since 08 July 2015
+	* @var input string
+	* @return object
+	*/
+	number_alpha: function( input ) {
+
+		if ( input == null ) {
+
+			input = this.result;
+
+		}
+
+		for (var i = 0; i < input.length; i++) {
+
+			if ( isNaN( parseInt( input.charAt( i ) ) ) ) continue;
+
+			else {
+
+			this.temp = this.persian_number[ parseInt( input.charAt( i ) ) ];
+
+			this.result = this.result.replace( input.charAt( i ), this.temp );
+
+			}
+
+		}
 
 		return this;
 
@@ -53,7 +88,7 @@ module.exports = {
 	},
 
 	/**********************************************************************
-	* Convert Arabic charachters to persian
+	* Convert arabic charachters to persian
 	***********************************************************************
 	* @since 30 Jun 2015
 	* @var input string
@@ -90,12 +125,13 @@ module.exports = {
 			input = this.result;
 
 		}
+		 	this.result = input;
 
-			this.number( input );
+		  this.number_alpha(this.result);
 
-			this.half_space( input );
+			this.half_space( this.result );
 
-			this.removeArabicChar( input );
+			this.removeArabicChar( this.result );
 
 			return this;
 
