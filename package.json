@@ -1,5 +1,5 @@
 {
-  "name": "ls",
+  "name": "persianize",
   "version": "1.0.0",
   "description": "Persianize is set of nodejs tools for validating and converting data in true persian.",
   "main": "persianize.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/coffeetalkh/persianize-node"
+    "url": "http://github.com/coffeetalkh/persianize-node.git"
   },
   "keywords": [
     "git",
