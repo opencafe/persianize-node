@@ -38,27 +38,27 @@ This object helps you to change pharses to right persian
 Convert English and Arabic numbers to right Persian numbers.
 
 ```js
-persianize.convert().number('0123456789'); // Output --> ۰۱۲۳۴۵۶۷۸۹
+persianize.convert().number('0123456789').get(); // Output --> ۰۱۲۳۴۵۶۷۸۹
 ```
 
 ### Remove Arabic charachter
 Remove Arabic keyboard charachters from persian text.
 
 ```js
-persianize.convert().removeArabicChar('فارسي')->get(); // Output --> فارسی
+persianize.convert().removeArabicChar('فارسي').get(); // Output --> فارسی
 ```
 
 ### Replace space with half-space
 Detect persian verbs and replace space with half-space
 ```js
-persianize.convert().half_space('می روی')->get(); // Output --> می‌روی
+persianize.convert().half_space('می روی').get(); // Output --> می‌روی
 ```
 
 ### Full Convert
 This method will convert number, convert arabic characters to Persian and replace space with half-space.
 
 ```js
-persianize.convert().all('فارسي 1')->get(); // Output --> فارسی ۱
+persianize.convert().all('فارسي 1').get(); // Output --> فارسی ۱
 ```
 
 ## Validate
@@ -77,4 +77,18 @@ Validate Persian Number
 
 ```js
 persianize.validator().number('۱۲۳'); // Output --> TRUE
+```
+
+### Alpha_Num
+Validate Persian Alphabet and numbers
+
+```js
+persianize.validator().alpha_num('۳فارسی'); //Output --> TRUE
+```
+
+### Text
+Validate Persian alphabet, numbers, space, half-space and special characters.
+
+```js
+persianize.validator().text('۳ فارسی')
 ```
