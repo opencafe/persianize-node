@@ -47,7 +47,7 @@ module.exports = {
 	* @var input string
 	* @return boolean
 	*/
-	alpha_num: function( input ) {
+	alphaNum: function( input ) {
 
 		this.regex = /^([\u0600-\u06FF]{1,})+$/;
 

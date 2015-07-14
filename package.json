@@ -1,6 +1,6 @@
 {
   "name": "persianize",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Persianize is set of nodejs tools for validating and converting data in true persian.",
   "main": "persianize.js",
   "scripts": {

@@ -1,5 +1,5 @@
 # persianize-node
-Persianize is set of nodejs tools for validating and converting data in true persian.
+Persianize is set of nodejs tools for validating and converting data in true Persian.
 
 * [Convert](#convert)
 * [Validate](#validate)
@@ -12,7 +12,7 @@ If you have a package.json file in your directory you can require the package an
 ```json
 {
     "name": "persianize",
-    "version": "1.0.0"
+    "version": "1.0.*"
 }
 ```
 
@@ -32,7 +32,7 @@ var persianize = require('persianize');
 ```
 
 ## Convert
-This object helps you to change pharses to right persian
+This object helps you to change phrases to right Persian
 
 ### Number
 Convert English and Arabic numbers to right Persian numbers.
@@ -42,7 +42,7 @@ persianize.convert().number('0123456789').get(); // Output --> ۰۱۲۳۴۵۶۷�
 ```
 
 ### Remove Arabic charachter
-Remove Arabic keyboard charachters from persian text.
+Remove Arabic keyboard characters from Persian text.
 
 ```js
 persianize.convert().removeArabicChar('فارسي').get(); // Output --> فارسی
@@ -51,7 +51,7 @@ persianize.convert().removeArabicChar('فارسي').get(); // Output --> فار�
 ### Replace space with half-space
 Detect persian verbs and replace space with half-space
 ```js
-persianize.convert().half_space('می روی').get(); // Output --> می‌روی
+persianize.convert().halfSpace('می روی').get(); // Output --> می‌روی
 ```
 
 ### Full Convert
@@ -83,12 +83,12 @@ persianize.validator().number('۱۲۳'); // Output --> TRUE
 Validate Persian Alphabet and numbers
 
 ```js
-persianize.validator().alpha_num('۳فارسی'); //Output --> TRUE
+persianize.validator().alphaNum('۳فارسی'); //Output --> TRUE
 ```
 
 ### Text
 Validate Persian alphabet, numbers, space, half-space and special characters.
 
 ```js
-persianize.validator().text('۳ فارسی')
+persianize.validator().text('۳ فارسی') //Output --> TRUE
 ```

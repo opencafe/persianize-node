@@ -38,7 +38,7 @@ module.exports = {
 	* @var input string
 	* @return object
 	*/
-	number_alpha: function( input ) {
+	alphaNum: function( input ) {
 
 		if ( input == null ) {
 
@@ -71,7 +71,7 @@ module.exports = {
 	 * @var input string
 	 * @return Object
 	 */
-	half_space: function( input ) {
+	halfSpace: function( input ) {
 
 		if ( input == null ) {
 
@@ -79,7 +79,7 @@ module.exports = {
 
 		}
 
-			this.result = input.replace(/([\u0645]+[\u06CC])+\s/g, "$1\u200C");
+			this.result = input.replace(/(\s[\u0645]+[\u06CC])+\s/g, "$1\u200C");
 
 			this.result = this.result.replace(/([\u0647])+\s+([\u0627]+[\u0645]||[\u0627]+[\u0649]||[\u0627]+[\u0649]+[\u0649]||[\u0627]+[\u0649]+[\u0645]||[\u0649]+[\u0646]+[\u062f]||[\u0627]+[\u0649]+[\u062f])/g, "$1\u200C$2");
 
@@ -127,9 +127,9 @@ module.exports = {
 		}
 		 	this.result = input;
 
-		  this.number_alpha(this.result);
+		  this.alphaNum(this.result);
 
-			this.half_space( this.result );
+			this.halfSpace( this.result );
 
 			this.removeArabicChar( this.result );
 
