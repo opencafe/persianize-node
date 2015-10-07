@@ -41,7 +41,7 @@ Convert English and Arabic numbers to right Persian numbers.
 persianize.convert().number('0123456789').get(); // Output --> ۰۱۲۳۴۵۶۷۸۹
 ```
 
-### Remove Arabic charachter
+### Remove Arabic character
 Remove Arabic keyboard characters from Persian text.
 
 ```js
