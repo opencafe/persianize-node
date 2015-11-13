@@ -1,5 +1,5 @@
 # persianize-node
-Persianize is set of nodejs tools for validating and converting data in true Persian.
+Persianize is set of nodejs tools for validating and converting data in correct Persian.
 
 * [Convert](#convert)
 * [Validate](#validate)
