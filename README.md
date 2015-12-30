@@ -92,3 +92,7 @@ Validate Persian alphabet, numbers, space, half-space and special characters.
 ```js
 persianize.validator().text('۳ فارسی') //Output --> TRUE
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/opencafe/persianize-node/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
