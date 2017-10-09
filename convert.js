@@ -45,6 +45,7 @@ module.exports = {
 			input = this.result;
 
 		}
+		this.result = input;
 
 		for (var i = 0; i < input.length; i++) {
 
