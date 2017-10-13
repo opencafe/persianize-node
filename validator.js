@@ -4,6 +4,8 @@ module.exports = {
 
 	regex: '',
 
+	result: null,
+
 	/**********************************************
 	 * Validate persian numbers
 	 **********************************************
@@ -86,6 +88,70 @@ module.exports = {
 
 	},
 
+	/*********************************************************
+	 * Validate Iran bank card number
+	 *********************************************************
+	 * @since 13 Oct 2017
+	 * @var integer
+	 * @return boolean
+	 */
+	cradNumber: function( input ) {
+
+		this.regex = /^\d{16}$/;
+
+		if ( this._run( input ) ) {
+
+			var sum = 0,
+				temp;
+
+			input = input.toString();
+
+			for ( var i = 1; i <= 16; i++ ) {
+				temp = input.charAt(i - 1);
+				temp = i % 2 === 0 ? parseInt(temp) : parseInt(temp) * 2;
+				temp = temp > 9 ? temp - 9 : temp;
+				sum += temp;
+			}
+
+			this.result = sum % 10 === 0;
+		} else {
+			this.result = false;
+		}
+
+		return this.result;
+
+	},
+
+	/*********************************************************
+	 * Validate Iran phone number
+	 *********************************************************
+	 * @since 13 Oct 2017
+	 * @var integer
+	 * @return boolean
+	 */
+	phone : function( input ) {
+
+		this.regex = /^[2-9][0-9]{7}$/;
+
+		return this._run( input );
+
+	},
+
+	/*********************************************************
+	 * Validate Iran postal code
+	 *********************************************************
+	 * @since 13 Oct 2017
+	 * @var integer
+	 * @return boolean
+	 */
+	postalCode : function( input ) {
+
+		this.regex = /^(\d{5}-?\d{5})$/;
+
+		return this._run( input );
+
+	},
+
 	/**********************************************
 	 * Run validate reqular expresion
 	 **********************************************
@@ -95,14 +161,10 @@ module.exports = {
 	 */
 	_run: function( input ) {
 
-		if( this.regex.test( input ) ) {
-
+		if ( this.regex.test( input ) ) {
 			return true;
-
 		} else {
-
 		    return false;
-
 		}
 
 	}
