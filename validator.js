@@ -1,3 +1,20 @@
+var
+range = function( start, end ) {
+	var result = [];
+	if ( /[A-Z a-z]/.test( start ) && /[A-Z a-z]/.test( end ) ) {
+		for ( var i = start.charCodeAt(0), j = end.charCodeAt(0); i <= j; ++i ) {
+	    	result.push(String.fromCharCode(i));
+	  	}
+	} else {
+		for ( var i = start, j = end; i <= j; ++i ) {
+				result.push( parseInt( i ) );
+		}
+
+	}
+
+  	return result;
+};
+
 module.exports = {
 
 	version: '0.0.0',
@@ -92,7 +109,7 @@ module.exports = {
 	 * Validate Iran bank card number
 	 *********************************************************
 	 * @since 13 Oct 2017
-	 * @var integer
+	 * @var input string
 	 * @return boolean
 	 */
 	cradNumber: function( input ) {
@@ -114,6 +131,7 @@ module.exports = {
 			}
 
 			this.result = sum % 10 === 0;
+
 		} else {
 			this.result = false;
 		}
@@ -126,7 +144,7 @@ module.exports = {
 	 * Validate Iran phone number
 	 *********************************************************
 	 * @since 13 Oct 2017
-	 * @var integer
+	 * @var input string
 	 * @return boolean
 	 */
 	phone : function( input ) {
@@ -141,7 +159,7 @@ module.exports = {
 	 * Validate Iran postal code
 	 *********************************************************
 	 * @since 13 Oct 2017
-	 * @var integer
+	 * @var input string
 	 * @return boolean
 	 */
 	postalCode : function( input ) {
@@ -149,6 +167,107 @@ module.exports = {
 		this.regex = /^(\d{5}-?\d{5})$/;
 
 		return this._run( input );
+
+	},
+
+	/*********************************************************
+	 * Validate sheba number
+	 *********************************************************
+	 * @since 18 Nov 2017
+	 * @var input string
+	 * @return boolean
+	 */
+	sheba : function( input ) {
+
+		var ibanReplaceValues = [],
+			ibanReplaceChars = [],
+			tmpIBAN;
+
+		if ( input ) {
+
+			input = input.replace(/[\W_]+/, '');
+
+			if ( ( input.length < 4 || input.length > 34 ) || ( ! isNaN( input[0] ) ||
+			 ! isNaN( input[1] ) ) || ( isNaN( input[2] ) || isNaN( input[3] ) ) ) {
+
+				this.result = false;
+			}
+
+			ibanReplaceChars = range('A', 'Z');
+
+			range(10, 35).forEach( function( tempvalue ) {
+				ibanReplaceValues.push( tempvalue.toString() );
+			});
+
+			tmpIBAN = input.substr( 4, input.length - 4 ) + input.substr( 0, 4 );
+
+			ibanReplaceChars.forEach( function( value, index ) {
+				for (var i = 0; i < tmpIBAN.length; i++) {
+					if ( tmpIBAN[i] == value ) {
+						tmpIBAN = tmpIBAN.replace( tmpIBAN[i], ibanReplaceValues[index] );
+					}
+				}
+			});
+
+			tmpValue = parseInt( tmpIBAN.substr( 0, 1 ) );
+
+			for ( var i = 1; i < tmpIBAN.length; i++ ) {
+				tmpValue *= 10;
+
+				tmpValue += parseInt( tmpIBAN.substr(i, 1) );
+
+				tmpValue %= 97;
+			}
+
+			if (tmpValue != 1) {
+				return false;
+			}
+
+			return true;
+
+		}
+
+		return false;
+
+	},
+
+	/*********************************************************
+	 * Validate meli code number
+	 *********************************************************
+	 * @since 18 Nov 2017
+	 * @var input string
+	 * @return boolean
+	 */
+	meliCode : function( input ) {
+
+		if (! /^\d{8,10}$/.test(input) || /^[0]{10}|[1]{10}|[2]{10}|[3]{10}|[4]{10}|[5]{10}|[6]{10}|[7]{10}|[8]{10}|[9]{10}$/.test(input) ) {
+			return false;
+		}
+
+		var sub = 0,
+			control;
+
+		if (input.length == 8) {
+			input = '00' + input;
+		} else if (  input.length == 9) {
+			input = '0' + input;
+		}
+
+		for ( var i = 0; i <= 8; i++) {
+			sub = parseInt( sub ) + ( parseInt( input[i] ) * ( 10 - i ) );
+		}
+
+		if (( parseInt( sub ) % 11 ) < 2) {
+			control = ( parseInt( sub ) % 11 );
+		} else {
+			control = 11 - ( parseInt( sub ) % 11 );
+		}
+		
+		if (input[9] == control) {
+			return true;
+		} else {
+			return false;
+		}
 
 	},
 
