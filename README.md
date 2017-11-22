@@ -1,6 +1,6 @@
 # persianize-node
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]] [npm-url][![Build Status][travis-image]][travis-url]
+[![NPM version][npm-image]][npm-url][![Downloads][downloads-image]][npm-url][![Build Status][travis-image]][travis-url]
 
 Persianize is set of nodejs tools for validating and converting data in correct Persian.
 
