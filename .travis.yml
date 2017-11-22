@@ -1,12 +1,20 @@
 language: node_js
+
+before_install:
+  - npm install $MOCHA --force
+
+env:
+  - MOCHA=mocha@1
+  - MOCHA=mocha@2
+  - MOCHA=mocha@3
+  - MOCHA=mocha@4
+
 node_js:
-  - "0.8"
   - "0.10"
-  - "0.12"
-  - "1.8"
-  - "2.5"
-  - "3.3"
-  - "4.8"
-  - "5.12"
-  - "6.10"
-  - "7.10"
+  - "4"
+  - "stable"
+
+matrix:
+  exclude:
+  - env: MOCHA=mocha@4
+    node_js: "0.10"
