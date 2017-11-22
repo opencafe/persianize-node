@@ -1,4 +1,7 @@
 # persianize-node
+
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Downloads][downloads-image]][npm-url]
+
 Persianize is set of nodejs tools for validating and converting data in correct Persian.
 
 * [Convert](#convert)
@@ -12,7 +15,7 @@ If you have a package.json file in your directory you can require the package an
 ```json
 {
     "name": "persianize",
-    "version": "1.0.*"
+    "version": "2.0.0"
 }
 ```
 
@@ -92,3 +95,53 @@ Validate Persian alphabet, numbers, space, half-space and special characters.
 ```js
 persianize.validator().text('۳ فارسی') //Output --> TRUE
 ```
+
+### Mobile
+Validate Iran mobile number.
+
+```js
+persianize.validator().mobile('09355555555') //Output --> TRUE
+```
+
+### Crad_Number
+Validate Iran crad number.
+
+```js
+persianize.validator().cradNumber('6274129005473742') //Output --> TRUE
+```
+
+### Phone
+Validate Iran phone number.
+
+```js
+persianize.validator().phone('37236445') //Output --> TRUE
+```
+
+### Postal_Code
+Validate Iran postal code.
+
+```js
+persianize.validator().postalCode('1619735744') //Output --> TRUE
+```
+
+### Sheba
+Validate Iran sheba number.
+
+```js
+persianize.validator().sheba('IR062960000000100324200001') //Output --> TRUE
+```
+
+### Meli_Code
+Validate Iran sheba number.
+
+```js
+persianize.validator().meliCode('0013542419') //Output --> TRUE
+```
+
+[downloads-image]: http://img.shields.io/npm/dt/persianize.svg
+
+[npm-url]: https://npmjs.org/package/persianize
+[npm-image]: http://img.shields.io/npm/v/persianize.svg
+
+[travis-url]: https://travis-ci.org/opencafe/persianize-node.js
+[travis-image]: https://travis-ci.org/opencafe/persianize-node.svg

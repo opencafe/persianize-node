@@ -1,0 +1,14 @@
+language: node_js
+
+before_install:
+  - npm install $MOCHA --force
+
+env:
+  - MOCHA=mocha@1
+  - MOCHA=mocha@2
+  - MOCHA=mocha@3
+  - MOCHA=mocha@4
+
+node_js:
+  - "4"
+  - "stable"
