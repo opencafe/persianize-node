@@ -1,4 +1,5 @@
 # persianize-node
+[![Build Status](https://travis-ci.org/opencafe/persianize-node.svg?branch=develop)](https://travis-ci.org/opencafe/persianize-node)
 Persianize is set of nodejs tools for validating and converting data in correct Persian.
 
 * [Convert](#convert)
