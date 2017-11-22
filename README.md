@@ -1,6 +1,6 @@
 # persianize-node
 
-[![Build Status](https://travis-ci.org/opencafe/persianize-node.svg?branch=develop)](https://travis-ci.org/opencafe/persianize-node)
+[![NPM version][npm-image]][npm-url][![Downloads][downloads-image]][npm-url][![Build Status][travis-image]][travis-url]
 
 Persianize is set of nodejs tools for validating and converting data in correct Persian.
 
@@ -137,3 +137,11 @@ Validate Iran sheba number.
 ```js
 persianize.validator().meliCode('0013542419') //Output --> TRUE
 ```
+
+[downloads-image]: http://img.shields.io/npm/dm/persianize.svg
+
+[npm-url]: https://npmjs.org/package/persianize
+[npm-image]: http://img.shields.io/npm/v/persianize.svg
+
+[travis-url]: https://travis-ci.org/opencafe/persianize-node.js
+[travis-image]: https://travis-ci.org/opencafe/persianize-node.svg

@@ -12,7 +12,3 @@ env:
 node_js:
   - "4"
   - "stable"
-
-matrix:
-  exclude:
-  - env: MOCHA=mocha@4
