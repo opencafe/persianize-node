@@ -4,8 +4,8 @@
   "description": "Persianize is set of nodejs tools for validating and converting data in true persian.",
   "main": "persianize.js",
   "scripts": {
-    "test": "persianize.validator().number('1')",
-    "start": "node server.js"
+    "test": "mocha",
+    "start": "node server.js",
   },
   "repository": {
     "type": "git",
@@ -23,18 +23,21 @@
   ],
   "author": "Mehdi Hosseini <mehdi.hosseini.dev@gmail.com>",
   "contributors": [
-        {
-            "name": "Mehdi Hosseini",
-            "email": "mehdi.hosseini.dev@gmail.com"
-        },
-        {
-            "name": "Shahrokh Niakan",
-            "email": "shahrokhniakan@gmail.com"
-        }
-    ],
+    {
+      "name": "Mehdi Hosseini",
+      "email": "mehdi.hosseini.dev@gmail.com"
+    },
+    {
+      "name": "Shahrokh Niakan",
+      "email": "shahrokhniakan@gmail.com"
+    }
+  ],
   "license": "Apache License 2.0",
   "bugs": {
     "url": "https://github.com/coffeetalkh/persianize-node/issues"
   },
-  "homepage": "https://github.com/coffeetalkh/persianize-node"
+  "homepage": "https://github.com/coffeetalkh/persianize-node",
+  "dependencies": {
+    "mocha": "^4.0.1"
+  }
 }
