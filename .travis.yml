@@ -10,11 +10,9 @@ env:
   - MOCHA=mocha@4
 
 node_js:
-  - "0.10"
   - "4"
   - "stable"
 
 matrix:
   exclude:
   - env: MOCHA=mocha@4
-    node_js: "0.10"

@@ -18,6 +18,11 @@ var persianize = require('./persianize');
       assert.equal(false, persianize.validator().alphaNum("persian1"));
     });
 
+    it('Persian text', function() {
+      assert.equal(true, persianize.validator().text("۳ فارسی"));
+      assert.equal(false, persianize.validator().text("persian 1"));
+    });
+
     it('Iran mobile number', function() {
       assert.equal(true, persianize.validator().mobile("09355555555"));
       assert.equal(true, persianize.validator().mobile("00989355555555"));
