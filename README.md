@@ -1,6 +1,6 @@
 # persianize-node
 
-[![NPM version][npm-image]][npm-url][![Downloads][downloads-image]][npm-url][![Build Status][travis-image]][travis-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Downloads][downloads-image]][npm-url]
 
 Persianize is set of nodejs tools for validating and converting data in correct Persian.
 
@@ -15,7 +15,7 @@ If you have a package.json file in your directory you can require the package an
 ```json
 {
     "name": "persianize",
-    "version": "1.0.*"
+    "version": "2.0.0"
 }
 ```
 
