@@ -143,5 +143,5 @@ persianize.validator().meliCode('0013542419') //Output --> TRUE
 [npm-url]: https://npmjs.org/package/persianize
 [npm-image]: http://img.shields.io/npm/v/persianize.svg
 
-[travis-url]: https://travis-ci.org/opencafe/persianize-node.js
+[travis-url]: https://travis-ci.org/opencafe/persianize-node
 [travis-image]: https://travis-ci.org/opencafe/persianize-node.svg
