@@ -132,7 +132,7 @@ persianize.validator().sheba('IR062960000000100324200001') //Output --> TRUE
 ```
 
 ### Meli_Code
-Validate Iran sheba number.
+Validate Iran meli code.
 
 ```js
 persianize.validator().meliCode('0013542419') //Output --> TRUE
